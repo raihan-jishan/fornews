@@ -3,10 +3,13 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    
   ],
+  darkMode:'class',
   theme: { 
+    
     fontFamily: { 
-      'Comfortaa': ['"Comfortaa"', 'serif']  
+      'Montserrat': ['"Montserrat"', 'sans-serif']  
     },
     
   },

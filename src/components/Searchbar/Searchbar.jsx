@@ -1,73 +1,28 @@
-/* eslint-disable react/prop-types */
+import React from "react";
+import { IoSearchOutline } from "react-icons/io5";
 
-import { IoIosSearch } from "react-icons/io";
-const Searchbar = (props) => {
-  const handleOpen = props.handleOpen;
-  const search = props.search;
+const Searchbar = ({
+  setSelectedCategory,
+  searchQueryHandler,
+  selectedCategory,
+}) => {
   return (
-    <div>
-      <form>
-        <label
-          htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white "
-        >
-          Search
-        </label>
-        <div className="relative w-96 max-md:hidden">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <IoIosSearch size={30} className="mr-3" />
-          </div>
-          <input
-            type="search"
-            id="default-search"
-            className="block w-full p-4 ps-10 text-xl bg-gray-100 rounded-full "
-            placeholder="Search Mockups, Logos..."
-            required
-          />
-          <button
-            type="submit"
-            className="text-white absolute end-2.5 bottom-2.5 bg-gray-600 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium    px-4 py-2 dark:bg-gray-600 dark:hover:bg-gray-600 dark:focus:ring-blue-800 rounded-full text-xl hover:scale-95 transition-all"
-          >
-            Search
-          </button>
-        </div>
+    <>
+      <div className="relative flex items-center justify-center ">
+        <input
+          type="search"
+          className="w-full rounded-full relative m-0 block flex-auto   bg-zinc-200 dark:bg-zinc-700  dark:text-zinc-50 bg-clip-padding px-5 py-3 text-base font-normal leading-[1.6] text-surface outline-none transition duration-200 ease-in-out placeholder:text-neutral-500 focus:z-[3] focus:border-primary focus:shadow-inset focus:outline-none motion-reduce:transition-none dark:border-white/10  dark:autofill:shadow-autofill dark:focus:border-primary placeholder:font-bold placeholder:text-lg "
+          placeholder="Search"
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          onKeyUp={searchQueryHandler}
+          value={selectedCategory}
+        />
 
-        {/* mobile searchbar */}
-        {search ? (
-          <div className="relative w-70  flex-col ">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <IoIosSearch size={30} className="mr-3" />
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              className="block w-full p-4 ps-10 text-xl  bg-gray-100 rounded-full "
-              placeholder="Search Mockups, Logos..."
-              required
-            />
-          </div>
-        ) : null}
-      </form>
-      <label
-        htmlFor="email"
-        className="relative   py-3 
-          rounded-full hidden  max-md:block
-          "
-      >
-        {search ? (
-          <div className="px-10 bg-gray-800 p-1 rounded-full text-gray-100 text-center text-5xl hover:scale-95 transition-all">
-            <i className="fa-sharp fa-light fa-xmark" onClick={handleOpen}></i>
-          </div>
-        ) : (
-          <div className="px-10 bg-gray-800 p-1 rounded-full text-gray-100  text-2xl  transition-all hover:scale-80">
-            <i
-              className="fa-regular fa-magnifying-glass "
-              onClick={handleOpen}
-            ></i>
-          </div>
-        )}
-      </label>
-    </div>
+        <span className="flex items-center whitespace-nowrap px-3 py-[0.25rem] text-surface dark:border-neutral-400 dark:text-zinc-50  ">
+          <IoSearchOutline size={25} />
+        </span>
+      </div>
+    </>
   );
 };
 

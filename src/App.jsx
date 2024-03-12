@@ -1,14 +1,12 @@
-import Routes from "./Routes/Routes";
-import Layout from "./Layout/Layout";
-
+import { AppContext } from "./context/newsContext.jsx";
+import Layout from "./layout/Layout.jsx";
 function App() { 
-  console.log('console is clean...');
   return (
-    <Layout> 
-      <Routes />
-      
-    </Layout>
+    <AppContext>
+      <div className="font-Montserrat bg-white dark:bg-zinc-900 dark:text-zinc-50">
+        <Layout />
+      </div>
+    </AppContext>
   );
 }
-
 export default App;
