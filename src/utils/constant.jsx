@@ -30,4 +30,5 @@ export const sliderData = [
   { id: 9, name: "top lines", type: "category" },
   { id: 10, name: "rich mans", type: "category" },
   { id: 11, name: "crypto", type: "category" },
+  { id: 12, name: "treding", type: "category" },
 ];
