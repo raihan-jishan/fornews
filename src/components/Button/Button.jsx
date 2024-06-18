@@ -1,47 +1,31 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-export const Button = ({
-  text,
-  width,
-  icon,
-  path,
-  fontWeight,
+const Button = ({
+  name,
   fontSize,
-  style,
-  bg,
-  rounded,
+  px,
+  roundedMedium,
+  roundedFull,
+  mobilePadding,
+  url,
+  redirect,
+  icon
 }) => {
   return (
     <Link
-      to={path}
-      className={`p-2 text-center flex
-       items-center justify-center px-6 font-${fontWeight}  ${bg} hover:scale-95 transition-all  text-${fontSize} rounded-${rounded} ${style} flex gap-3 w-${width}  `}
+      to={url}
+      target={`${redirect ? "_blank" : ""}`}
+      className={`bg-black text-white p-[0.6rem] w-full cursor-pointer dark:bg-gray-100 dark:text-black  ${px} ${fontSize} capitalize font-semibold ${
+        roundedMedium
+          ? "rounded-lg"
+          : roundedFull
+          ? "rounded-full"
+          : "rounded-sm"
+      } hover:scale-95 flex gap-4  items-center justify-center text-center transition-all ${mobilePadding}`}
     >
-      {text} {icon}
+      {name} {icon}
     </Link>
   );
 };
-export const NavigateBtn = ({
-  text,
-  width,
-  icon,
-  link,
-  fontWeight,
-  fontSize,
-  style,
-  bg,
-  rounded,
-}) => {
-  return (
-    <a
-      href={link}
-      target="_blank"
-      rel="norreffer"
-      className={`p-2 text-center flex
-       items-center justify-center px-6 font-${fontWeight}  ${bg} hover:scale-95 transition-all  text-${fontSize} rounded-${rounded} ${style} flex gap-3 w-${width}  `}
-    >
-      {text} {icon}
-    </a>
-  );
-};
+
+export default Button;

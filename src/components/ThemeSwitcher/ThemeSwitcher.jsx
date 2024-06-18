@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GoSun } from "react-icons/go";
-import { TiWeatherPartlySunny } from "react-icons/ti";
-const ThemeSwitcher = () => {
+import { CiDark, CiSun } from "../../utils/icons";
+const ThemeSwitcher = ({ click }) => {
   const [theme, setTheme] = useState(null);
 
   // dark & light mode
@@ -25,21 +24,22 @@ const ThemeSwitcher = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <button onClick={handleThemeSwitch}>
-      {theme === "dark" ? (
-        <h1>
-          <GoSun
-            size="35"
-            className="text-zinc-50  dark:text-zinc-400 hover:scale-95 transition-all bg-zinc-900"
-          />
-        </h1>
-      ) : (
-        <h1>
-          {" "}
-          <TiWeatherPartlySunny size={40} />{" "}
-        </h1>
+    <div>
+      {click ? null : (
+        <button onClick={handleThemeSwitch}>
+          {theme === "dark" ? (
+            <h1>
+              <CiSun size={35} className="text-white dark:text-white" />
+            </h1>
+          ) : (
+            <h1>
+              {" "}
+              <CiDark size={35} />{" "}
+            </h1>
+          )}
+        </button>
       )}
-    </button>
+    </div>
   );
 };
 

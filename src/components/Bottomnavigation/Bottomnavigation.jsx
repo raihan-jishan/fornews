@@ -1,24 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
 import { Context } from "../../context/newsContext";
 import { sliderData } from "../../utils/constant";
-import SliderList from "./SliderList";
-
-const BottomSlider = () => {
+import NavigationList from "./NavigationList";
+const Bottomnavigation = () => {
   const { selectedCategory, setSelectedCategory } = useContext(Context);
-  const navigate = useNavigate();
+  // define the state
   const [show, setShow] = useState(false);
-  const location = useLocation();
-  useEffect(() => {
-    if (!["/sources", "/trendingnews", ,].includes(location.pathname)) {
-      setShow(true);
-     
-    } else {
-      setShow(false);
-    }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const navigate = useNavigate();
+  const location = useLocation();
   const clickHandler = (name, type) => {
     switch (type) {
       case "category":
@@ -31,34 +23,44 @@ const BottomSlider = () => {
         break;
     }
   };
+  // useEffect hook
+  useEffect(() => {
+    if (!["/account", "/aboutus", "/contactus"].includes(location.pathname)) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }, []);
+
   return (
-    <>
+    <div>
       {show && (
         <div
-          className="bg-zinc-100 overflow-auto whitespace-nowrap overflow-x-scroll   p-4 flex items-center justify-center max-lg:block dark:bg-zinc-900"
+          className="bg-white overflow-auto whitespace-nowrap overflow-x-scroll    p-2 flex items-center justify-center max-lg:block dark:bg-black"
           id="sliderContainer"
         >
           {sliderData.map((data) => {
             return (
-              <SliderList
+              <NavigationList
                 key={data.id}
                 data={data}
                 action={() => {
                   clickHandler(data.name, data.type);
                   navigate("/");
                 }}
+             
                 bg={
                   selectedCategory === data.name
-                    ? "bg-zinc-700 text-zinc-100 dark:bg-zinc-300 dark:text-zinc-900 "
-                    : "text-zinc-900 dark:text-zinc-100"
+                    ? "bg-black text-white dark:bg-white dark:text-black" // for active links
+                    : "bg-gray-100 text-black dark:bg-gray-700 dark:text-white"
                 }
               />
             );
           })}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default BottomSlider;
+export default Bottomnavigation;

@@ -1,16 +1,13 @@
-import React from "react";
+ 
 import { Route, Routes as Router } from "react-router-dom";
-import Home from "../pages/Home.jsx";
-import Setting from "../pages/Settings.jsx";
-import Theme from "../pages/Theme.jsx";
-import Trendng from "../pages/TrendingNews.jsx";
+import { AboutUs, Account, ContactUs, Home } from '../utils/index';
 const Routes = () => {
   return (
     <Router>
-      <Route path="/" element={<Home />} />
-      <Route path="/trendingnews" element={<Trendng />} />
-      <Route path="/settings" element={<Setting />} />
-      <Route path="/theme" element={<Theme />} />
+      <Route path="/" element={<Home /> } />
+      <Route path="/aboutus" element={<AboutUs /> }/> 
+      <Route path="/account" element={<Account /> } />
+      <Route path="/contactus" element={<ContactUs /> } />
     </Router>
   );
 };

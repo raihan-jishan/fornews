@@ -3,13 +3,15 @@ export const Context = createContext();
 export const AppContext = (props) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [trending, setTrending] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("news");
+  const [widgetsNews, setWidgetsNews] = useState([]);
+  const [totalResults, setTotalResults] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   useEffect(() => {
     setLoading(true);
     RequestedNews(selectedCategory);
-    trendingNews();
+    homeWidgetsNews(selectedCategory);
   }, [selectedCategory]);
+  // requested news
   const RequestedNews = async (query) => {
     const serverUrl = `${
       import.meta.env.VITE_SERVER_URL
@@ -18,27 +20,33 @@ export const AppContext = (props) => {
     const url = serverUrl;
     let data = await fetch(url);
     let parsedData = await data.json();
+    setTotalResults(parsedData.totalResults);
     setNews(parsedData.articles);
   };
-  // trendingNews function
-  const trendingNews = async () => {
-    const serverUrl = `${
-      import.meta.env.VITE_SERVER_URL
-    }/api?q=trending&usa&pageSize=${80}&apiKey=${import.meta.env.VITE_API_KEY}`;
+
+  // homeWidgetsNews function
+  const homeWidgetsNews = async (query) => {
+    const serverUrl = `${import.meta.env.VITE_SERVER_URL}/api?q=${
+     query
+    }&usa&pageSize=${1}&apiKey=${import.meta.env.VITE_API_KEY}`;
 
     const url = serverUrl;
     let data = await fetch(url);
     let parsedData = await data.json();
-    setTrending(parsedData.articles);
+    setWidgetsNews(parsedData.articles);
   };
+
+ 
   return (
     <Context.Provider
       value={{
         news,
         setNews,
-        trending,
+        widgetsNews,
         selectedCategory,
         setSelectedCategory,
+       
+        totalResults,
         loading,
         setLoading,
       }}
