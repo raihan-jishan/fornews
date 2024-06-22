@@ -22,7 +22,7 @@ export const navListdata = [
   {
     id: 4,
     name: "Contacts",
-    path:'/contacts'
+    path:'/contactus'
   },
 ];
 
