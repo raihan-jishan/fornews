@@ -11,7 +11,6 @@ import SavedNews from "../components/Savednews/SavedNews";
 import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
 import Heading from "../components/Typography/Heading";
 import BottomDropdown from "../components/tools/BottomDropdown";
-import Homewidgets from "../components/widgets/Homewidgets";
 import NewsWidgets from '../components/widgets/Newswidgets';
 import Widgets from "../components/widgets/Widgets";
 import { Context } from "../context/newsContext";
@@ -25,7 +24,7 @@ export {
     Button,
     Card, ContactUs, Context,
     Heading, Home,
-    Homewidgets, ItemCard,
+    ItemCard,
     NavList,
     Navbar,
     NavigationList, NewsWidgets, Routes,
