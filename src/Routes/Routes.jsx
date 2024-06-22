@@ -1,6 +1,7 @@
  
 import { Route, Routes as Router } from "react-router-dom";
-import { AboutUs, Account, ContactUs, Home } from '../utils/index';
+import AboutUs from '../pages/AboutUs';
+import { Account, ContactUs, Home } from '../utils/index';
 const Routes = () => {
   return (
     <Router>

@@ -14,12 +14,11 @@ import BottomDropdown from "../components/tools/BottomDropdown";
 import NewsWidgets from '../components/widgets/Newswidgets';
 import Widgets from "../components/widgets/Widgets";
 import { Context } from "../context/newsContext";
-import AboutUs from "../pages/Aboutus";
 import Account from "../pages/Account";
 import ContactUs from "../pages/ContactUs";
 import Home from '../pages/Home';
 export {
-    AboutUs, Account,
+    Account,
     Avatar, BottomDropdown, Bottomnavigation,
     Button,
     Card, ContactUs, Context,
