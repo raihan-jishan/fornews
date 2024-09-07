@@ -8,12 +8,16 @@ const Widgets = () => {
     <section id="home" className="dark:text-white dark:bg-black  ">
       <Homewidgets widgetsNews={widgetsNews} />
       {/* news card */}
+
       <Heading
         title={"All news"}
         fontSize={"text-5xl"}
         fontWeight={"font-bold"}
       />
-      <NewsWidgets news={news} totalResults={totalResults} />
+
+     
+        <NewsWidgets news={news} totalResults={totalResults} />
+      
     </section>
   );
 };

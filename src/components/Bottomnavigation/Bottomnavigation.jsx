@@ -45,15 +45,16 @@ const Bottomnavigation = () => {
                 key={data.id}
                 data={data}
                 action={() => {
-                  clickHandler(data.name, data.type);
+                  clickHandler(data.name, data.type, data.icon);
                   navigate("/");
                 }}
-             
                 bg={
                   selectedCategory === data.name
-                    ? "bg-black text-white dark:bg-white dark:text-black" // for active links
-                    : "bg-gray-100 text-black dark:bg-gray-700 dark:text-white"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : // for active links
+                      "bg-gray-100 text-black dark:bg-gray-700 dark:text-white"
                 }
+                icon={selectedCategory === data.name ? data.icon : null }
               />
             );
           })}

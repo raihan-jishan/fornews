@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PiReadCvLogoFill } from "react-icons/pi";
 import { MdOutlineVerified } from "../../utils/icons";
 import { Button } from "../../utils/index";
 const Homewidgets = ({ widgetsNews }) => {
@@ -16,10 +17,17 @@ const Homewidgets = ({ widgetsNews }) => {
   return (
     <div>
       {widgetsNews.map((item, index) => (
-        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12" key={index}>
+        <div
+          class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+          key={index}
+        >
           <div class="  lg:mt-0 lg:col-span-5 lg:flex">
             <img
-              src={!item.urlToImage ? "https://images.unsplash.com/photo-1517061493161-6f312d1c36d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5ld3MlMjBwYXBlciUyMGJsdXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" : item.urlToImage}
+              src={
+                !item.urlToImage
+                  ? "https://images.unsplash.com/photo-1517061493161-6f312d1c36d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5ld3MlMjBwYXBlciUyMGJsdXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                  : item.urlToImage
+              }
               alt="mockup"
               className="w-[100%] h-full"
             />
@@ -33,7 +41,11 @@ const Homewidgets = ({ widgetsNews }) => {
               <div className="flex  gap-3">
                 {/* avater image */}
                 <img
-                    src={!item.urlToImage ? "https://images.unsplash.com/photo-1517061493161-6f312d1c36d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5ld3MlMjBwYXBlciUyMGJsdXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" : item.urlToImage}
+                  src={
+                    !item.urlToImage
+                      ? "https://images.unsplash.com/photo-1517061493161-6f312d1c36d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5ld3MlMjBwYXBlciUyMGJsdXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                      : item.urlToImage
+                  }
                   alt="avater image was not found!"
                   className="w-10 h-10 rounded-full"
                 />
@@ -45,7 +57,10 @@ const Homewidgets = ({ widgetsNews }) => {
                 <h3 className="font-semibold text-sm mt-1">12minutes ago</h3>
 
                 {/* verified avater */}
-                <MdOutlineVerified size={30} className=" text-black dark:text-gray-200" />
+                <MdOutlineVerified
+                  size={30}
+                  className=" text-black dark:text-gray-200"
+                />
               </div>
             </div>
 
@@ -56,7 +71,12 @@ const Homewidgets = ({ widgetsNews }) => {
               {item.description}
             </p>
             {/* button */}
-            <Button name={"read "} px={"px-20"} roundedMedium />
+            <Button
+              name={"read "}
+              px={"px-20"}
+              roundedMedium
+              icon={<PiReadCvLogoFill size={25} />}
+            />
           </div>
         </div>
       ))}

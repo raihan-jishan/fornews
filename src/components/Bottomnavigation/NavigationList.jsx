@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-const NavigationList = ({ data, action, bg }) => {
+const NavigationList = ({ data, action, bg , icon}) => {
   return (
     <NavLink
       to={"/"}
@@ -7,7 +7,9 @@ const NavigationList = ({ data, action, bg }) => {
       onClick={action}
     >
       {" "}
-      {data.name}
+      <span className="flex gap-1">
+      {icon} {data.name} 
+      </span>
     </NavLink>
   );
 };

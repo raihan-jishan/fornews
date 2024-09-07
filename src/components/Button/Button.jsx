@@ -21,7 +21,7 @@ const Button = ({
           : roundedFull
           ? "rounded-full"
           : "rounded-sm"
-      } hover:scale-95 flex gap-4  items-center justify-center text-center transition-all ${mobilePadding}`}
+      } hover:scale-95 dark:hover:bg-[#ccc] flex gap-5  items-center justify-center text-center transition-all ${mobilePadding} max-lg:gap-1`}
     >
       {name} {icon}
     </Link>

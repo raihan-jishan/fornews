@@ -3,7 +3,7 @@ import Avatar from "../components/AccountAvatar/Avatar";
 import Bottomnavigation from "../components/Bottomnavigation/Bottomnavigation";
 import NavigationList from "../components/Bottomnavigation/NavigationList";
 import Button from "../components/Button/Button";
-import Card from "../components/Card/Card";
+import { Card } from "../components/Card/Card";
 import NavList from "../components/Navbar/NavList";
 import Navbar from "../components/Navbar/Navbar";
 import ItemCard from "../components/Savednews/ItemCard";
@@ -23,10 +23,8 @@ export {
     Button,
     Card, ContactUs, Context,
     Heading, Home,
-    ItemCard,
-    NavList,
-    Navbar,
-    NavigationList, NewsWidgets, Routes,
+    ItemCard, Navbar,
+    NavigationList, NavList, NewsWidgets, Routes,
     SavedNews,
     ThemeSwitcher, Widgets
 };
