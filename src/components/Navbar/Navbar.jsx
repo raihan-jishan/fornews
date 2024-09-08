@@ -24,7 +24,7 @@ const Navbar = () => {
             fontSize={"text-[1rem]"}
             icon={<MdOutlineAccountCircle size={25} />}
             roundedMedium
-            mobilePadding={"max-lg:px-6"}
+            mobilePadding={"max-lg:px-4"}
           />
 
           {/* for mobile devices */}
