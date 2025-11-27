@@ -1,4 +1,4 @@
-import Button from "../../../../../../backup of fornews/src/components/ui/button";
+import Button from "../../ui/button";
 import Nav from "../../shared/nav";
 
 const Hero = ({ article }) => {
