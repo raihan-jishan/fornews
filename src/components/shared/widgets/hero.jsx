@@ -14,7 +14,7 @@ export default Hero;
 
 function HeroSection({ article }) {
   if (!article) {
-    return <p className="p-4">নিউজ লোড হচ্ছে বা সিলেক্ট করুন...</p>;
+    return <p className="p-4">news are loading!</p>
   }
 
   return ( 
