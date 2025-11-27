@@ -1,13 +1,18 @@
-import Layout from "./Layout/Layout.jsx";
-import { AppContext } from "./context/newsContext.jsx";
-import { Routes } from "./utils/index.jsx";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
+import News from "./pages/news";
+import Story from "./pages/story";
+import CategoryPage from "./pages/category";
+
 function App() {
   return (
-    <AppContext>
-      <Layout>
-        <Routes /> 
-      </Layout>
-    </AppContext>
+    <Routes>
+      <Route path="/" element={<Navigate to={"/home"} />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/news" element={<News />} />
+       <Route path="/stories" element={<Story />} />
+         <Route path="/category/:name" element={<CategoryPage />} />
+    </Routes>
   );
 }
 export default App;
